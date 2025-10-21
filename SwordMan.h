@@ -9,7 +9,7 @@ namespace SwordMan
 	private:
 
 	public:
-		SwordMan(int hp, int stamina, int pos, int radiusAttack);
+		SwordMan(int hp, int stamina, int pos, int damage, int radiusAttack);
 		void attack(Soldier* target) override;
 		void rest() override;
 	};

@@ -6,12 +6,10 @@ namespace MeleeSoldier
 {
 	class MeleeSoldier : public Soldier::Soldier
 	{
-	private:
+		protected:
 		int attackRadius;
 	public:
-		MeleeSoldier(int hp, int stamina, int pos, int attackRadius);
-		
-	
+		MeleeSoldier(int hp, int stamina, int pos, int damage, int attackRadius);
 	};
 }
 

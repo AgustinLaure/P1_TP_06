@@ -4,12 +4,15 @@
 
 namespace SwordMan
 {
-	SwordMan::SwordMan(int hp, int stamina, int pos, int attackRadius) : MeleeSoldier(hp, stamina, pos, attackRadius) {}
+	SwordMan::SwordMan(int hp, int stamina, int pos, int damage, int attackRadius) : MeleeSoldier(hp, stamina, pos, damage, attackRadius) {}
 
 	void SwordMan::attack(Soldier* target)
 	{
 
-		std::cout << "El soldado sword ataco a " << target->getHp();
+		if (abs(pos) - abs(target->getPos()) <= attackRadius)
+		{
+			target->takeDamage(damage);
+		}
 	}
 	void SwordMan::rest()
 	{
