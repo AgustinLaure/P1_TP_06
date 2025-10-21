@@ -9,7 +9,7 @@ namespace MeleeSoldier
 	private:
 		int attackRadius;
 	public:
-		MeleeSoldier(int hp, int stamina, int attackRadius);
+		MeleeSoldier(int hp, int stamina, int pos, int attackRadius);
 		
 	
 	};

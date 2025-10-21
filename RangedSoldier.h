@@ -10,6 +10,6 @@ namespace RangedSoldier
 		int minDistance;
 		int maxDistance;
 	public:
-	RangedSoldier(int hp, int stamina, int minDistance, int maxDistance);
+	RangedSoldier(int hp, int stamina, int pos, int minDistance, int maxDistance);
 	};
 }

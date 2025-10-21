@@ -4,12 +4,12 @@
 
 namespace Soldier
 {
-	Soldier::Soldier(int hp, int stamina) : hp(hp), stamina() {}
+	Soldier::Soldier(int hp, int stamina, int pos) : hp(hp), stamina(), pos(pos) {}
 
 	int Soldier::getHp() { return hp; }
 	int Soldier::getStamina() { return stamina; }
-
-	void attack(Soldier* target) {}
-	void rest() {}
-
+	void Soldier::takeDamage(int damage)
+	{
+		hp -= damage;
+	}
 }
