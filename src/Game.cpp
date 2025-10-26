@@ -29,6 +29,7 @@ namespace game
 			(
 				random::getRandom(swordMan::minHp, swordMan::maxHp),
 				random::getRandom(swordMan::minStamina, swordMan::maxStamina),
+				swordMan::staminaAttackCost,
 				pos,
 				random::getRandom(swordMan::minDmg, swordMan::maxDmg),
 				swordMan::name,
@@ -43,6 +44,7 @@ namespace game
 			(
 				random::getRandom(lancer::minHp, lancer::maxHp),
 				random::getRandom(lancer::minStamina, lancer::maxStamina),
+				lancer::staminaAttackCost,
 				pos,
 				random::getRandom(lancer::minDmg, lancer::maxDmg),
 				lancer::name,
@@ -57,6 +59,7 @@ namespace game
 			(
 				random::getRandom(archer::minHp, archer::maxHp),
 				random::getRandom(archer::minStamina, archer::maxStamina),
+				archer::staminaAttackCost,
 				pos,
 				random::getRandom(archer::minDmg, archer::maxDmg),
 				archer::name,
@@ -72,6 +75,7 @@ namespace game
 			(
 				random::getRandom(crossbowMan::minHp, crossbowMan::maxHp),
 				random::getRandom(crossbowMan::minStamina, crossbowMan::maxStamina),
+				crossbowMan::staminaAttackCost,
 				pos,
 				random::getRandom(crossbowMan::minDmg, crossbowMan::maxDmg),
 				crossbowMan::name,
@@ -129,9 +133,8 @@ namespace game
 			{
 				consoleHandle::clearScreen();
 
-				//soldiers[i]->attack(soldiers[getSoldierTarget(i)]);
-
 				drawStats();
+				soldiers[i]->update(getSoldierTarget(i));
 
 				consoleHandle::pauseConsole();
 			}
@@ -152,7 +155,10 @@ namespace game
 				namesWritten = 0;
 			}
 
-			consoleHandle::print(distBetweenNames * namesWritten, line, soldiers[i]->getName());
+			consoleHandle::print(distBetweenNames * namesWritten, line + 1, "Position ");
+			std::cout << i+1;
+
+			consoleHandle::print(distBetweenNames * namesWritten, line+3, soldiers[i]->getName());
 			std::string isAliveText = " ";
 
 			if (soldiers[i]->getIsAlive())
@@ -164,15 +170,15 @@ namespace game
 				isAliveText = "Dead";
 			}
 
-			consoleHandle::print(distBetweenNames * namesWritten, line + 1, isAliveText);
+			consoleHandle::print(distBetweenNames * namesWritten, line + 4, isAliveText);
 
-			consoleHandle::print(distBetweenNames * namesWritten, line + 2, "Hp ");
+			consoleHandle::print(distBetweenNames * namesWritten, line + 5, "Hp ");
 			std::cout << soldiers[i]->getHp();
 
-			consoleHandle::print(distBetweenNames * namesWritten, line + 3, "Stam ");
-			std::cout << soldiers[i]->getStamina();
+			consoleHandle::print(distBetweenNames * namesWritten, line + 6, "Stam ");
+			std::cout << soldiers[i]->getCurrentStamina() << " / " << soldiers[i]->getMaxStamina();
 
-			consoleHandle::print(distBetweenNames * namesWritten, line + 4, "Dmg ");
+			consoleHandle::print(distBetweenNames * namesWritten, line + 7, "Dmg ");
 			std::cout << soldiers[i]->getDamage();
 
 			meleeSoldier::MeleeSoldier* meleePointer = dynamic_cast<meleeSoldier::MeleeSoldier*>(soldiers[i]);
@@ -180,15 +186,15 @@ namespace game
 
 			if (meleePointer)
 			{
-				consoleHandle::print(distBetweenNames * namesWritten, line + 5, "Radius ");
+				consoleHandle::print(distBetweenNames * namesWritten, line + 8, "Radius ");
 				std::cout << meleePointer->getAttackRadius();
 			}
 			else if (rangedPointer)
 			{
-				consoleHandle::print(distBetweenNames * namesWritten, line + 5, "MinDist ");
+				consoleHandle::print(distBetweenNames * namesWritten, line + 8, "MinDist ");
 				std::cout << rangedPointer->getMinDistance();
 
-				consoleHandle::print(distBetweenNames * namesWritten, line + 6, "MaxDist ");
+				consoleHandle::print(distBetweenNames * namesWritten, line + 9, "MaxDist ");
 				std::cout << rangedPointer->getMaxDistance();
 			}
 
@@ -198,7 +204,7 @@ namespace game
 		}
 	}
 
-	int Game::getSoldierTarget(int self)
+	soldier::Soldier* Game::getSoldierTarget(int self)
 	{
 		int target = 0;
 
@@ -208,6 +214,6 @@ namespace game
 
 		} while (!soldiers[target]->getIsAlive() || target == self);
 
-		return 0;
+		return soldiers[target];
 	}
 }

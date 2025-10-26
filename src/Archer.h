@@ -10,6 +10,8 @@ namespace archer
 	const int minStamina = 13;
 	const int maxStamina = 15;
 
+	const int staminaAttackCost = 10;
+
 	const int minDmg = 8;
 	const int maxDmg = 10;
 
@@ -23,8 +25,6 @@ namespace archer
 	private:
 
 	public:
-		Archer(int hp, int stamina, int pos, int dmg, std::string name, int minDistance, int maxDistance);
-		void attack(Soldier* target) override;
-		void rest() override;
+		Archer(int hp, int maxStamina, int staminaAttackCost, int pos, int dmg, std::string name, int minDistance, int maxDistance);
 	};
 }

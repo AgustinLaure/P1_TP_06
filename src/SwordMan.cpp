@@ -4,17 +4,15 @@
 
 namespace swordMan
 {
-	SwordMan::SwordMan(int hp, int stamina, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(hp, stamina, pos, damage, name, attackRadius) {}
+	SwordMan::SwordMan(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(hp, maxStamina, staminaAttackCost, pos, damage, name, attackRadius) {}
 
-	void SwordMan::attack(Soldier* target)
+	void SwordMan::landedHitText()
 	{
-		if (abs(pos) - abs(target->getPos()) <= attackRadius)
-		{
-			target->takeDamage(damage);
-		}
+		std::cout << name << " e impacto el golpe haciendole " << damage << " de danio a un enemigo";
 	}
-	void SwordMan::rest()
+
+	void SwordMan::landHit()
 	{
-		std::cout << "El sword descanso";
+		target->takeDamage(damage);
 	}
 }

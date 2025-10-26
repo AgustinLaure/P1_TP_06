@@ -4,6 +4,9 @@
 
 namespace swordMan
 {
+	const int staminaAttackCost = 10;
+	const int staminaRecover = 15;
+	
 	const int minHp = 80;
 	const int maxHp = 100;
 
@@ -21,9 +24,9 @@ namespace swordMan
 	{
 	private:
 	public:
-		SwordMan(int hp, int stamina, int pos, int damage, std::string name, int attackRadius);
-		void attack(Soldier* target) override;
-		void rest() override;
+		SwordMan(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
+		void landedHitText() override;
+		void landHit() override;
 	};
 
 }

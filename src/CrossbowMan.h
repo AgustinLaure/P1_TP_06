@@ -11,6 +11,8 @@ namespace crossbowMan
 	const int minStamina = 10;
 	const int maxStamina = 15;
 
+	const int staminaAttackCost = 10;
+
 	const int minDmg = 6;
 	const int maxDmg = 7;
 
@@ -22,9 +24,7 @@ namespace crossbowMan
 	class CrossbowMan : public rangedSoldier::RangedSoldier
 	{
 	public:
-		CrossbowMan(int hp, int stamina, int pos, int damage, std::string name, int minDistance, int maxDistance);
-		void attack(Soldier* target) override;
-		void rest() override;
+		CrossbowMan(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int minDistance, int maxDistance);
 	};
 }
 

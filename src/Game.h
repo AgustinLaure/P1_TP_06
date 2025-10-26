@@ -16,8 +16,8 @@ namespace game
 
 	const int maxSoldiers = 10;
 	const int distBetweenNames = 16;
-	const int maxLinesPerSoldier = 7;
-	const int distBetweenLines = 3;
+	const int maxLinesPerSoldier = 8;
+	const int distBetweenLines = 4;
 
 	class Game
 	{
@@ -28,7 +28,7 @@ namespace game
 			static soldier::Soldier* getRandomSoldier(const int pos);
 			static void initSoldiers();
 			static void drawStats();
-			static int getSoldierTarget(int self);
+			static soldier::Soldier* getSoldierTarget(int self);
 		public:
 			static void game();
 	};

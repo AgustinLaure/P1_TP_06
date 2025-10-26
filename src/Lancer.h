@@ -9,6 +9,8 @@ namespace lancer
 	const int minStamina = 15;
 	const int maxStamina = 20;
 
+	const int staminaAttackCost = 15;
+
 	const int minDmg = 6;
 	const int maxDmg = 8;
 
@@ -19,10 +21,11 @@ namespace lancer
 	class Lancer : public meleeSoldier::MeleeSoldier
 	{
 	private:
+		int hitAmount;
 	public:
-		Lancer(int hp, int stamina, int pos, int damage, std::string name, int attackRadius);
-		void attack(Soldier* target) override;
-		void rest() override;
+		Lancer(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
+		void landHit() override;
+		void landedHitText() override;
 	};
 }
 
