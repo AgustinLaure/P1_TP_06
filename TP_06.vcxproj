@@ -18,6 +18,28 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Archer.cpp" />
+    <ClCompile Include="src\CrossbowMan.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Lancer.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MeleeSoldier.cpp" />
+    <ClCompile Include="src\RangedSoldier.cpp" />
+    <ClCompile Include="src\Soldier.cpp" />
+    <ClCompile Include="src\SwordMan.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Archer.h" />
+    <ClInclude Include="src\Constants.h" />
+    <ClInclude Include="src\CrossbowMan.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Lancer.h" />
+    <ClInclude Include="src\MeleeSoldier.h" />
+    <ClInclude Include="src\RangedSoldier.h" />
+    <ClInclude Include="src\Soldier.h" />
+    <ClInclude Include="src\SwordMan.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -70,6 +92,22 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj/$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj/$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj/$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj/$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -126,28 +164,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Archer.cpp" />
-    <ClCompile Include="CrossbowMan.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Lancer.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MeleeSoldier.cpp" />
-    <ClCompile Include="RangedSoldier.cpp" />
-    <ClCompile Include="Soldier.cpp" />
-    <ClCompile Include="SwordMan.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Archer.h" />
-    <ClInclude Include="Constants.h" />
-    <ClInclude Include="CrossbowMan.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="Lancer.h" />
-    <ClInclude Include="MeleeSoldier.h" />
-    <ClInclude Include="RangedSoldier.h" />
-    <ClInclude Include="Soldier.h" />
-    <ClInclude Include="SwordMan.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

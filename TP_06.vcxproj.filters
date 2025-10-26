@@ -1,75 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{c0400e81-f223-4739-ba1a-2081c2aa327d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Archer.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Soldier.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\CrossbowMan.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="MeleeSoldier.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="SwordMan.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Lancer.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Lancer.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Archer.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\MeleeSoldier.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="RangedSoldier.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\RangedSoldier.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="CrossbowMan.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Soldier.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\SwordMan.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Soldier.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\Archer.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="MeleeSoldier.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\Constants.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="SwordMan.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\CrossbowMan.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Lancer.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\Game.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Archer.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\Lancer.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="RangedSoldier.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\MeleeSoldier.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="CrossbowMan.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\RangedSoldier.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\Soldier.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\SwordMan.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
