@@ -1,6 +1,7 @@
 #include "Game.h"
 
 #include <iostream>
+#include <string>
 
 #include "SwordMan.h"
 #include "Lancer.h"
@@ -84,6 +85,29 @@ namespace game
 			break;
 		}
 
+		int repeat = 1;
+
+		for (int i = 0; i < maxSoldiers; i++)
+		{
+			if (soldiers[i])
+			{
+				if (soldiers[i]->getName() == soldierPointer->getName())
+				{
+					if (repeat-1 % 10 == 0)
+					{
+						soldierPointer->setName(soldierPointer->getName() + ' ');
+					}
+
+					repeat++;
+
+					std::string name = soldierPointer->getName();
+					name[name.size()-1] = '0' + repeat;
+
+					soldierPointer->setName(name);
+				}
+			}
+		}
+
 		return soldierPointer;
 	}
 
@@ -101,7 +125,16 @@ namespace game
 
 		while (isRunning)
 		{
-			drawStats();
+			for (int i = 0; i < maxSoldiers; i++)
+			{
+				consoleHandle::clearScreen();
+
+				//soldiers[i]->attack(soldiers[getSoldierTarget(i)]);
+
+				drawStats();
+
+				consoleHandle::pauseConsole();
+			}
 		}
 	}
 
@@ -159,7 +192,22 @@ namespace game
 				std::cout << rangedPointer->getMaxDistance();
 			}
 
+			std::cout << std::endl << std::endl << std::endl;
+
 			namesWritten++;
 		}
+	}
+
+	int Game::getSoldierTarget(int self)
+	{
+		int target = 0;
+
+		do
+		{
+			random::getRandom(0, maxSoldiers - 1);
+
+		} while (!soldiers[target]->getIsAlive() || target == self);
+
+		return 0;
 	}
 }

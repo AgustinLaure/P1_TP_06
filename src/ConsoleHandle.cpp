@@ -30,4 +30,14 @@ namespace consoleHandle
 
 		cout << text;
 	}
+
+	void clearScreen()
+	{
+		system("cls");
+	}
+
+	void pauseConsole()
+	{
+		system("pause");
+	}
 }
