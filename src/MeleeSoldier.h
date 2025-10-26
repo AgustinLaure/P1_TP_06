@@ -2,11 +2,11 @@
 
 #include "Soldier.h"
 
-namespace MeleeSoldier
+namespace meleeSoldier
 {
-	class MeleeSoldier : public Soldier::Soldier
+	class MeleeSoldier : public soldier::Soldier
 	{
-		protected:
+	protected:
 		int attackRadius;
 	public:
 		MeleeSoldier(int hp, int stamina, int pos, int damage, int attackRadius);

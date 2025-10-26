@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace Soldier
+namespace soldier
 {
 	Soldier::Soldier(int hp, int stamina, int pos, int damage) : hp(hp), stamina(), pos(pos), damage(damage), isAlive(false) {}
 

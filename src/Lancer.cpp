@@ -1,7 +1,9 @@
 #include "Lancer.h"
 
-namespace Lancer
+namespace lancer
 {
+	Lancer::Lancer(int hp, int stamina, int pos, int damage, int attackRadius) : meleeSoldier::MeleeSoldier(hp, stamina, pos, damage, attackRadius) {}
+
 	void Lancer::attack(Soldier* target)
 	{
 

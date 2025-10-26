@@ -31,7 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Archer.h" />
-    <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\CrossbowMan.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Lancer.h" />

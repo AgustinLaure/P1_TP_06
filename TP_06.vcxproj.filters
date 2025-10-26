@@ -38,9 +38,6 @@
     <ClInclude Include="src\Archer.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Constants.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\CrossbowMan.h">
       <Filter>src</Filter>
     </ClInclude>

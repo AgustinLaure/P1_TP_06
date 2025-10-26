@@ -2,14 +2,14 @@
 
 #include "Soldier.h"
 
-namespace RangedSoldier
+namespace rangedSoldier
 {
-	class RangedSoldier : public Soldier::Soldier
+	class RangedSoldier : public soldier::Soldier
 	{
 	private:
 		int minDistance;
 		int maxDistance;
 	public:
-	RangedSoldier(int hp, int stamina, int pos, int minDistance, int maxDistance);
+	RangedSoldier(int hp, int stamina, int pos, int dmg, int minDistance, int maxDistance);
 	};
 }

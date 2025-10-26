@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Soldier
+namespace soldier
 {
 	class Soldier
 	{
