@@ -15,7 +15,9 @@ namespace game
 	};
 
 	const int maxSoldiers = 10;
-	const int distBetweenNames = 3;
+	const int distBetweenNames = 16;
+	const int maxLinesPerSoldier = 7;
+	const int distBetweenLines = 3;
 
 	class Game
 	{

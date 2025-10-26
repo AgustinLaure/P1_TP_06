@@ -107,20 +107,19 @@ namespace game
 
 	void Game::drawStats()
 	{
-		int distanceBetweenNames = 0;
+		int line = 0;
+		int namesWritten = 0;
 
 		for (int i = 0; i < maxSoldiers; i++)
 		{
-			if (i > 0)
+			if (i % 5 == 0 && i != 0)
 			{
-				distanceBetweenNames = 0;
-				for (int j = 0; j < i; j++)
-				{
-					distanceBetweenNames += soldiers[j]->getName().length() + distBetweenNames;
-				}
+				line++;
+				line = maxLinesPerSoldier * line + distBetweenLines;
+				namesWritten = 0;
 			}
 
-			consoleHandle::print(0 + distanceBetweenNames, 0, soldiers[i]->getName());
+			consoleHandle::print(distBetweenNames * namesWritten, line, soldiers[i]->getName());
 			std::string isAliveText = " ";
 
 			if (soldiers[i]->getIsAlive())
@@ -132,15 +131,15 @@ namespace game
 				isAliveText = "Dead";
 			}
 
-			consoleHandle::print(0 + distanceBetweenNames, 1, isAliveText);
+			consoleHandle::print(distBetweenNames * namesWritten, line + 1, isAliveText);
 
-			consoleHandle::print(0 + distanceBetweenNames, 2, "Hp ");
+			consoleHandle::print(distBetweenNames * namesWritten, line + 2, "Hp ");
 			std::cout << soldiers[i]->getHp();
 
-			consoleHandle::print(0 + distanceBetweenNames, 3, "Stam ");
+			consoleHandle::print(distBetweenNames * namesWritten, line + 3, "Stam ");
 			std::cout << soldiers[i]->getStamina();
 
-			consoleHandle::print(0 + distanceBetweenNames, 4, "Dmg ");
+			consoleHandle::print(distBetweenNames * namesWritten, line + 4, "Dmg ");
 			std::cout << soldiers[i]->getDamage();
 
 			meleeSoldier::MeleeSoldier* meleePointer = dynamic_cast<meleeSoldier::MeleeSoldier*>(soldiers[i]);
@@ -148,18 +147,19 @@ namespace game
 
 			if (meleePointer)
 			{
-				consoleHandle::print(0 + distanceBetweenNames, 5, "Radius ");
+				consoleHandle::print(distBetweenNames * namesWritten, line + 5, "Radius ");
 				std::cout << meleePointer->getAttackRadius();
 			}
 			else if (rangedPointer)
 			{
-				consoleHandle::print(0 + distanceBetweenNames, 5, "MinDist ");
+				consoleHandle::print(distBetweenNames * namesWritten, line + 5, "MinDist ");
 				std::cout << rangedPointer->getMinDistance();
 
-				consoleHandle::print(0 + distanceBetweenNames, 6, "MaxDist ");
+				consoleHandle::print(distBetweenNames * namesWritten, line + 6, "MaxDist ");
 				std::cout << rangedPointer->getMaxDistance();
 			}
 
+			namesWritten++;
 		}
 	}
 }
