@@ -33,6 +33,12 @@
     <ClCompile Include="src\SwordMan.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Random.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConsoleHandle.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Archer.h">
@@ -57,6 +63,12 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\SwordMan.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Random.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConsoleHandle.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

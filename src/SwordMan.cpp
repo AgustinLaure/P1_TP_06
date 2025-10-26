@@ -4,7 +4,7 @@
 
 namespace swordMan
 {
-	SwordMan::SwordMan(int hp, int stamina, int pos, int damage, int attackRadius) : MeleeSoldier(hp, stamina, pos, damage, attackRadius) {}
+	SwordMan::SwordMan(int hp, int stamina, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(hp, stamina, pos, damage, name, attackRadius) {}
 
 	void SwordMan::attack(Soldier* target)
 	{

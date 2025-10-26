@@ -2,7 +2,7 @@
 
 namespace crossbowMan
 {
-	CrossbowMan::CrossbowMan(int hp, int stamina, int pos, int damage, int minDistance, int maxDistance) : rangedSoldier::RangedSoldier(hp, stamina, pos, damage, minDistance, maxDistance) {}
+	CrossbowMan::CrossbowMan(int hp, int stamina, int pos, int damage, std::string name, int minDistance, int maxDistance) : RangedSoldier(hp, stamina, pos, damage,name, minDistance, maxDistance) {}
 
 	void CrossbowMan::attack(Soldier* target)
 	{

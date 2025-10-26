@@ -9,7 +9,8 @@ namespace meleeSoldier
 	protected:
 		int attackRadius;
 	public:
-		MeleeSoldier(int hp, int stamina, int pos, int damage, int attackRadius);
+		MeleeSoldier(int hp, int stamina, int pos, int damage, std::string name, int attackRadius);
+		int getAttackRadius();
 	};
 }
 

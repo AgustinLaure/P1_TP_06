@@ -1,10 +1,6 @@
 #pragma once
 
-#include <iostream>
-
 #include "Soldier.h"
-
-using namespace std;
 
 namespace game
 {
@@ -19,6 +15,7 @@ namespace game
 	};
 
 	const int maxSoldiers = 10;
+	const int distBetweenNames = 3;
 
 	class Game
 	{
@@ -28,10 +25,7 @@ namespace game
 
 			static soldier::Soldier* getRandomSoldier(const int pos);
 			static void initSoldiers();
-			static int getRandom(const int min, const int max);
-			static void gotoxy(int x, int y);
-			static void print(int x, int y, string text);
-			static void print(int x, int y, char text);
+			static void drawStats();
 		public:
 			static void game();
 	};

@@ -4,16 +4,24 @@
 
 namespace swordMan
 {
-	const int hp = 100;
-	const int stamina = 20;
-	const int dmg = 10;
-	const int attackRadius = 3;
+	const int minHp = 80;
+	const int maxHp = 100;
+
+	const int minStamina = 15;
+	const int maxStamina = 20;
+
+	const int minDmg = 8;
+	const int maxDmg = 10;
+
+	const std::string name = "Swordman";
+
+	const int attackRadius = 2;
 
 	class SwordMan : public meleeSoldier::MeleeSoldier
 	{
 	private:
 	public:
-		SwordMan(int hp, int stamina, int pos, int damage, int attackRadius);
+		SwordMan(int hp, int stamina, int pos, int damage, std::string name, int attackRadius);
 		void attack(Soldier* target) override;
 		void rest() override;
 	};

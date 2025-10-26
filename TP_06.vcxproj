@@ -20,21 +20,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Archer.cpp" />
+    <ClCompile Include="src\ConsoleHandle.cpp" />
     <ClCompile Include="src\CrossbowMan.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Lancer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\MeleeSoldier.cpp" />
+    <ClCompile Include="src\Random.cpp" />
     <ClCompile Include="src\RangedSoldier.cpp" />
     <ClCompile Include="src\Soldier.cpp" />
     <ClCompile Include="src\SwordMan.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Archer.h" />
+    <ClInclude Include="src\ConsoleHandle.h" />
     <ClInclude Include="src\CrossbowMan.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Lancer.h" />
     <ClInclude Include="src\MeleeSoldier.h" />
+    <ClInclude Include="src\Random.h" />
     <ClInclude Include="src\RangedSoldier.h" />
     <ClInclude Include="src\Soldier.h" />
     <ClInclude Include="src\SwordMan.h" />

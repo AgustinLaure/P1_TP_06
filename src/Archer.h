@@ -4,9 +4,17 @@
 
 namespace archer
 {
-	const int hp = 100;
-	const int stamina = 15;
-	const int dmg = 10;
+	const int minHp = 70;
+	const int maxHp = 90;
+
+	const int minStamina = 13;
+	const int maxStamina = 15;
+
+	const int minDmg = 8;
+	const int maxDmg = 10;
+
+	const std::string name = "Archer";
+
 	const int minDistance = 2;
 	const int maxDistance = 5;
 
@@ -15,7 +23,7 @@ namespace archer
 	private:
 
 	public:
-		Archer(int hp, int stamina, int pos, int dmg, int minDistance, int maxDistance);
+		Archer(int hp, int stamina, int pos, int dmg, std::string name, int minDistance, int maxDistance);
 		void attack(Soldier* target) override;
 		void rest() override;
 	};
