@@ -22,8 +22,6 @@ namespace archer
 
 	class Archer : public rangedSoldier::RangedSoldier
 	{
-	private:
-
 	public:
 		Archer(int maxHp, int maxStamina, int staminaAttackCost, int pos, int dmg, std::string name, int minDistance, int maxDistance);
 		~Archer() override;

@@ -23,12 +23,10 @@ namespace swordMan
 	class SwordMan : public meleeSoldier::MeleeSoldier
 	{
 	private:
+		void landedHitText() override;
+		void landHit(Soldier* soldiers[]) override;
 	public:
 		SwordMan(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
 		~SwordMan() override;
-		
-		void landedHitText() override;
-		void landHit(Soldier* soldiers[]) override;
 	};
-
 }

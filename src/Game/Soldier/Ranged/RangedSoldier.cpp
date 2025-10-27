@@ -2,12 +2,6 @@
 
 namespace rangedSoldier
 {
-	RangedSoldier::RangedSoldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int minDistance, int maxDistance) : Soldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name), minDistance(minDistance), maxDistance(maxDistance) {}
-	RangedSoldier::~RangedSoldier() {}
-	
-	int RangedSoldier::getMinDistance() { return minDistance; }
-	int RangedSoldier::getMaxDistance() { return maxDistance; }
-
 	void RangedSoldier::attack(Soldier* soldiers[])
 	{
 		int steps = getSteps(soldiers);
@@ -47,4 +41,10 @@ namespace rangedSoldier
 	{
 		soldiers[target]->takeDamage(damage);
 	}
+
+	RangedSoldier::RangedSoldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int minDistance, int maxDistance) : Soldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name), minDistance(minDistance), maxDistance(maxDistance) {}
+	RangedSoldier::~RangedSoldier() {}
+	
+	int RangedSoldier::getMinDistance() { return minDistance; }
+	int RangedSoldier::getMaxDistance() { return maxDistance; }
 }

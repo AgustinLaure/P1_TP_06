@@ -12,16 +12,6 @@ namespace soldier
 		std::cout << name << " no tenia energia suficiente, asi que descanso este turno";
 	}
 
-	void Soldier::loseStamina(int amount)
-	{
-		currentStamina -= amount;
-
-		if (currentStamina < 0)
-		{
-			currentStamina = 0;
-		}
-	}
-
 	void Soldier::rest()
 	{
 		recoverStamina();
@@ -31,6 +21,16 @@ namespace soldier
 	void Soldier::recoverStamina()
 	{
 		currentStamina = maxStamina;
+	}
+
+	void Soldier::loseStamina(int amount)
+	{
+		currentStamina -= amount;
+
+		if (currentStamina < 0)
+		{
+			currentStamina = 0;
+		}
 	}
 
 	int Soldier::getSteps(Soldier* soldiers[])

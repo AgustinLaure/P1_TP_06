@@ -23,12 +23,11 @@ namespace lancer
 	{
 	private:
 		int hitAmount;
+		void landHit(Soldier* soldiers[]) override;
+		void landedHitText() override;
 	public:
 		Lancer(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
 		~Lancer() override;
-		
-		void landHit(Soldier* soldiers[]) override;
-		void landedHitText() override;
 	};
 }
 

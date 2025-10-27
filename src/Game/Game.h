@@ -21,23 +21,23 @@ namespace game
 
 	class Game
 	{
-		private:
-			soldier::Soldier* soldiers[maxSoldiers];
-			bool isMatchRunning;
-			soldier::Soldier* winner;
-			int userInput;
+	private:
+		soldier::Soldier* soldiers[maxSoldiers];
+		bool isMatchRunning;
+		soldier::Soldier* winner;
+		int userInput;
 
-			soldier::Soldier* getRandomSoldier(const int pos);
-			void initSoldiers();
-			void drawStats();
-			int getSoldierTarget(int self);
-			bool isWinner();
-			void showWinner();
-			void runAgain(bool& isGameRunning);
-			
-		public:
-			Game();
-			void play(bool& isGameRunning);
-			~Game();
+		soldier::Soldier* getRandomSoldier(const int pos);
+		void initSoldiers();
+		void drawStats();
+		int getSoldierTarget(int self);
+		bool isWinner();
+		void showWinner();
+		void runAgain(bool& isGameRunning);
+
+	public:
+		Game();
+		void play(bool& isGameRunning);
+		~Game();
 	};
 }

@@ -2,9 +2,6 @@
 
 namespace lancer
 {
-	Lancer::Lancer(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name, attackRadius), hitAmount(0) {}
-	Lancer::~Lancer() {}
-
 	void Lancer::landHit(Soldier* soldiers[])
 	{
 		hitAmount = 0;
@@ -40,4 +37,7 @@ namespace lancer
 			std::cout << " e impacto a un enemigo haciendole " << damage << " de danio";
 		}
 	}
+
+	Lancer::Lancer(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name, attackRadius), hitAmount(0) {}
+	Lancer::~Lancer() {}
 }
