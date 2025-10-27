@@ -3,14 +3,16 @@
 namespace rangedSoldier
 {
 	RangedSoldier::RangedSoldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int minDistance, int maxDistance) : Soldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name), minDistance(minDistance), maxDistance(maxDistance) {}
+	RangedSoldier::~RangedSoldier() {}
+	
 	int RangedSoldier::getMinDistance() { return minDistance; }
 	int RangedSoldier::getMaxDistance() { return maxDistance; }
 
 	void RangedSoldier::attack(Soldier* soldiers[])
 	{
-		int dist = abs(pos - soldiers[target]->getPos());
+		int steps = getSteps(soldiers);
 
-		if (dist >= minDistance && dist <= maxDistance)
+		if (steps >= minDistance && steps <= maxDistance)
 		{
 			landHit(soldiers);
 
@@ -24,13 +26,13 @@ namespace rangedSoldier
 
 	void RangedSoldier::missedText(Soldier* soldiers[])
 	{
-		int dist = abs(pos - soldiers[target]->getPos());
+		int steps = getSteps(soldiers);
 
-		if (dist < minDistance)
+		if (steps < minDistance)
 		{
 			std::cout << " pero el disparo fallo porque estaba muy cerca";
 		}
-		else if (dist > maxDistance)
+		else if (steps > maxDistance)
 		{
 			std::cout << " pero el disparo fallo porque se quedo corto";
 		}

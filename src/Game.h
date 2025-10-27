@@ -22,14 +22,22 @@ namespace game
 	class Game
 	{
 		private:
-			static soldier::Soldier* soldiers[maxSoldiers];
-			static bool isRunning;
+			soldier::Soldier* soldiers[maxSoldiers];
+			bool isMatchRunning;
+			soldier::Soldier* winner;
+			int userInput;
 
-			static soldier::Soldier* getRandomSoldier(const int pos);
-			static void initSoldiers();
-			static void drawStats();
-			static int getSoldierTarget(int self);
+			soldier::Soldier* getRandomSoldier(const int pos);
+			void initSoldiers();
+			void drawStats();
+			int getSoldierTarget(int self);
+			bool isWinner();
+			void showWinner();
+			void runAgain(bool& isGameRunning);
+			
 		public:
-			static void game();
+			Game();
+			void play(bool& isGameRunning);
+			~Game();
 	};
 }

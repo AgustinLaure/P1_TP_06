@@ -35,8 +35,38 @@ namespace soldier
 		currentStamina = maxStamina;
 	}
 
+	int Soldier::getSteps(Soldier* soldiers[])
+	{
+		int dist = abs(pos - soldiers[target]->getPos());
+		int steps = 0;
+
+		if (pos > target)
+		{
+			for (int i = target; i > pos; i--)
+			{
+				if (soldiers[i]->getIsAlive())
+				{
+					steps++;
+				}
+			}
+		}
+		else if (pos < target)
+		{
+			for (int i = pos + 1; i < target; i++)
+			{
+				if (soldiers[i]->getIsAlive())
+				{
+					steps++;
+				}
+			}
+		}
+
+		return steps;
+	}
+
 	Soldier::Soldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name) : maxHp(maxHp), currentHp(maxHp), currentStamina(maxStamina), maxStamina(maxStamina), staminaAttackCost(staminaAttackCost), pos(pos), damage(damage), name(name), isAlive(true), target(0) {}
-	
+	Soldier::~Soldier() {}
+
 	std::string Soldier::getName() { return name; }
 	int Soldier::getCurrentHp() { return currentHp; }
 	int Soldier::getMaxHp() { return maxHp; }
@@ -57,6 +87,12 @@ namespace soldier
 	void Soldier::takeDamage(int damage)
 	{
 		currentHp -= damage;
+
+		if (currentHp <= 0)
+		{
+			currentHp = 0;
+			isAlive = false;
+		}
 	}
 
 	void Soldier::update(Soldier* soldiers[])

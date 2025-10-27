@@ -27,10 +27,11 @@ namespace soldier
 		virtual void landHit(Soldier* soldiers[]) = 0;
 		void rest();
 		void recoverStamina();
+		int getSteps(Soldier* soldiers[]);
 
 	public:
 		Soldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name);
-
+		virtual ~Soldier();
 		std::string getName();
 		int getCurrentHp();
 		int getMaxHp();

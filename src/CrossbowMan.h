@@ -5,16 +5,16 @@
 
 namespace crossbowMan
 {
-	const int minHp = 65;
-	const int maxHp = 75;
+	const int minHp = 40;
+	const int maxHp = 64;
 
 	const int minStamina = 10;
 	const int maxStamina = 15;
 
-	const int staminaAttackCost = 10;
+	const int staminaAttackCost = 3;
 
-	const int minDmg = 6;
-	const int maxDmg = 7;
+	const int minDmg = 12;
+	const int maxDmg = 17;
 
 	const std::string name = "CrossbowMan";
 
@@ -25,6 +25,7 @@ namespace crossbowMan
 	{
 	public:
 		CrossbowMan(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int minDistance, int maxDistance);
+		~CrossbowMan() override;
 	};
 }
 

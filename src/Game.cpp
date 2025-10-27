@@ -12,9 +12,6 @@
 
 namespace game
 {
-	bool Game::isRunning = true;
-	soldier::Soldier* Game::soldiers[] = {};
-
 	soldier::Soldier* Game::getRandomSoldier(const int pos)
 	{
 		PossibleSoldiers randomSoldier = static_cast<PossibleSoldiers>(random::getRandom(1, static_cast<int>(PossibleSoldiers::End) - 1));
@@ -97,7 +94,7 @@ namespace game
 			{
 				if (soldiers[i]->getName() == soldierPointer->getName())
 				{
-					if (repeat-1 % 10 == 0)
+					if (repeat - 1 % 10 == 0)
 					{
 						soldierPointer->setName(soldierPointer->getName() + ' ');
 					}
@@ -105,7 +102,7 @@ namespace game
 					repeat++;
 
 					std::string name = soldierPointer->getName();
-					name[name.size()-1] = '0' + repeat;
+					name[name.size() - 1] = '0' + repeat;
 
 					soldierPointer->setName(name);
 				}
@@ -120,27 +117,6 @@ namespace game
 		for (int i = 0; i < maxSoldiers; i++)
 		{
 			soldiers[i] = getRandomSoldier(i);
-		}
-	}
-
-	void Game::game()
-	{
-		initSoldiers();
-
-		while (isRunning)
-		{
-			for (int i = 0; i < maxSoldiers; i++)
-			{
-				consoleHandle::clearScreen();
-
-				drawStats();
-				soldiers[i]->setTarget(getSoldierTarget(i));
-				soldiers[i]->update(soldiers);
-
-				std::cout << std::endl << std::endl;
-
-				consoleHandle::pauseConsole();
-			}
 		}
 	}
 
@@ -159,9 +135,9 @@ namespace game
 			}
 
 			consoleHandle::print(distBetweenNames * namesWritten, line + 1, "Position ");
-			std::cout << i+1;
+			std::cout << i + 1;
 
-			consoleHandle::print(distBetweenNames * namesWritten, line+3, soldiers[i]->getName());
+			consoleHandle::print(distBetweenNames * namesWritten, line + 3, soldiers[i]->getName());
 			std::string isAliveText = " ";
 
 			if (soldiers[i]->getIsAlive())
@@ -218,5 +194,111 @@ namespace game
 		} while (!soldiers[target]->getIsAlive() || target == self);
 
 		return target;
+	}
+
+	bool Game::isWinner()
+	{
+		int alive = 0;
+		soldier::Soldier* lastAlive = nullptr;
+
+		for (int i = 0; i < maxSoldiers; i++)
+		{
+			if (soldiers[i]->getIsAlive())
+			{
+				alive++;
+				lastAlive = soldiers[i];
+			}
+		}
+
+		if (alive == 1)
+		{
+			winner = lastAlive;
+		}
+
+		return alive == 1;
+	}
+
+	void Game::showWinner()
+	{
+		consoleHandle::clearScreen();
+		cout << "El ganador es " << winner->getName() << endl << endl;
+	}
+
+	void Game::runAgain(bool& isGameRunning)
+	{
+		bool isCorrectInput = false;
+
+		do
+		{
+			consoleHandle::clearScreen();
+			cout << "Quieres correr de nuevo el programa? (1.Si / 2.No)";
+			cin >> userInput;
+
+			if (!cin)
+			{
+				cin.ignore();
+				cin.clear();
+			}
+			else
+			{
+				isCorrectInput = userInput <= 2 && userInput >= 1;
+			}
+
+		} while (!isCorrectInput);
+
+		if (userInput == 2)
+		{
+			isGameRunning = false;
+		}
+	}
+
+	Game::Game() : isMatchRunning(true), winner(nullptr), userInput(0)
+	{
+		for (int i = 0; i < maxSoldiers; i++)
+		{
+			soldiers[i] = nullptr;
+		}
+	}
+
+	void Game::play(bool& isGameRunning)
+	{
+		initSoldiers();
+
+		while (isMatchRunning)
+		{
+			for (int i = 0; i < maxSoldiers; i++)
+			{
+				if (soldiers[i]->getIsAlive())
+				{
+					consoleHandle::clearScreen();
+
+					drawStats();
+					soldiers[i]->setTarget(getSoldierTarget(i));
+					soldiers[i]->update(soldiers);
+
+					std::cout << std::endl << std::endl;
+
+					consoleHandle::pauseConsole();
+				}
+			}
+
+			if (isWinner())
+			{
+				showWinner();
+				isMatchRunning = false;
+				consoleHandle::pauseConsole();
+			}
+		}
+
+		runAgain(isGameRunning);
+	}
+
+	Game::~Game()
+	{
+		for (int i = 0; i < maxSoldiers; i++)
+		{
+			delete soldiers[i];
+			soldiers[i] = nullptr;
+		}		
 	}
 }

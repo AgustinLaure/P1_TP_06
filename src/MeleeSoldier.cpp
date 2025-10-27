@@ -3,11 +3,13 @@
 namespace meleeSoldier
 {
 	MeleeSoldier::MeleeSoldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : Soldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name), attackRadius(attackRadius) {}
+	MeleeSoldier::~MeleeSoldier() {}
+
 	int MeleeSoldier::getAttackRadius() { return attackRadius; }
 
 	void MeleeSoldier::attack(Soldier* soldiers[])
 	{
-		if (abs(pos - soldiers[target]->getPos()) <= attackRadius)
+		if (getSteps(soldiers) <= attackRadius)
 		{
 			landHit(soldiers);
 
