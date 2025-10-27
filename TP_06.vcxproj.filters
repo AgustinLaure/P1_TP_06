@@ -4,72 +4,99 @@
     <Filter Include="src">
       <UniqueIdentifier>{c0400e81-f223-4739-ba1a-2081c2aa327d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Utils">
+      <UniqueIdentifier>{6acd54e7-1390-4aa2-8bb8-08aec7eb781b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{13783a66-e0e4-466a-aee6-d1cf735ee1da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Soldier">
+      <UniqueIdentifier>{78f93933-f4d9-4c27-95f5-d3fba6ffdce9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Soldier\Melee">
+      <UniqueIdentifier>{77ce21da-7c56-4e38-be65-7270258a7142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Soldier\Ranged">
+      <UniqueIdentifier>{a1d8ec2c-538c-4eee-b265-9fffd8179953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Soldier\Melee\SwordMan">
+      <UniqueIdentifier>{7f53fbcd-a1f3-4d6d-8bcb-cada767d47bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Soldier\Melee\Lancer">
+      <UniqueIdentifier>{5f7cf345-b81a-40b6-837b-5311d8c7d530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Soldier\Ranged\Archer">
+      <UniqueIdentifier>{a83250fd-292f-464e-abc3-2d2eda320b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Soldier\Ranged\CrossbowMan">
+      <UniqueIdentifier>{69f7ffec-bb4f-4ad7-bc31-3f2d84664b5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Archer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CrossbowMan.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Lancer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\MeleeSoldier.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\Utils\Random.cpp">
+      <Filter>src\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\RangedSoldier.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\Utils\ConsoleHandle.cpp">
+      <Filter>src\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\Soldier.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\Game\Game.cpp">
+      <Filter>src\Game</Filter>
     </ClCompile>
-    <ClCompile Include="src\SwordMan.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\Game\Soldier\Soldier.cpp">
+      <Filter>src\Game\Soldier</Filter>
     </ClCompile>
-    <ClCompile Include="src\Random.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\Game\Soldier\Melee\MeleeSoldier.cpp">
+      <Filter>src\Game\Soldier\Melee</Filter>
     </ClCompile>
-    <ClCompile Include="src\ConsoleHandle.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\Game\Soldier\Melee\Lancer\Lancer.cpp">
+      <Filter>src\Game\Soldier\Melee\Lancer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Soldier\Melee\SwordMan\SwordMan.cpp">
+      <Filter>src\Game\Soldier\Melee\SwordMan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Soldier\Ranged\RangedSoldier.cpp">
+      <Filter>src\Game\Soldier\Ranged</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Soldier\Ranged\CrossbowMan\CrossbowMan.cpp">
+      <Filter>src\Game\Soldier\Ranged\CrossbowMan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Soldier\Ranged\Archer\Archer.cpp">
+      <Filter>src\Game\Soldier\Ranged\Archer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Archer.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Utils\Random.h">
+      <Filter>src\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\CrossbowMan.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Utils\ConsoleHandle.h">
+      <Filter>src\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\Game.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Game.h">
+      <Filter>src\Game</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lancer.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Soldier\Soldier.h">
+      <Filter>src\Game\Soldier</Filter>
     </ClInclude>
-    <ClInclude Include="src\MeleeSoldier.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Soldier\Melee\MeleeSoldier.h">
+      <Filter>src\Game\Soldier\Melee</Filter>
     </ClInclude>
-    <ClInclude Include="src\RangedSoldier.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Soldier\Melee\Lancer\Lancer.h">
+      <Filter>src\Game\Soldier\Melee\Lancer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Soldier.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Soldier\Melee\SwordMan\SwordMan.h">
+      <Filter>src\Game\Soldier\Melee\SwordMan</Filter>
     </ClInclude>
-    <ClInclude Include="src\SwordMan.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Soldier\Ranged\RangedSoldier.h">
+      <Filter>src\Game\Soldier\Ranged</Filter>
     </ClInclude>
-    <ClInclude Include="src\Random.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Soldier\Ranged\CrossbowMan\CrossbowMan.h">
+      <Filter>src\Game\Soldier\Ranged\CrossbowMan</Filter>
     </ClInclude>
-    <ClInclude Include="src\ConsoleHandle.h">
-      <Filter>src</Filter>
+    <ClInclude Include="src\Game\Soldier\Ranged\Archer\Archer.h">
+      <Filter>src\Game\Soldier\Ranged\Archer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

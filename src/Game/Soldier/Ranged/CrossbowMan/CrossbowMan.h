@@ -1,7 +1,6 @@
 #pragma once
 
-#include "RangedSoldier.h"
-#include "Soldier.h"
+#include "Game/Soldier/Ranged/RangedSoldier.h"
 
 namespace crossbowMan
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RangedSoldier.h"
+#include "Game/Soldier/Ranged/RangedSoldier.h"
 
 namespace archer
 {

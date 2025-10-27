@@ -1,14 +1,11 @@
-#include "Game.h"
+#include "Game/Game.h"
 
-#include <iostream>
-#include <string>
-
-#include "SwordMan.h"
-#include "Lancer.h"
-#include "Archer.h"
-#include "CrossbowMan.h"
-#include "Random.h"
-#include "consoleHandle.h"
+#include "Game/Soldier/Melee/SwordMan/SwordMan.h"
+#include "Game/Soldier/Melee/Lancer/Lancer.h"
+#include "Game/Soldier/Ranged/Archer/Archer.h"
+#include "Game/Soldier/Ranged/CrossbowMan/CrossbowMan.h"
+#include "Utils/Random.h"
+#include "Utils/ConsoleHandle.h"
 
 namespace game
 {

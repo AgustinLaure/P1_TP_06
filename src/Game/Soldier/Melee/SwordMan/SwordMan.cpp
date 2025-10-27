@@ -1,6 +1,4 @@
-#include "SwordMan.h"
-
-#include <iostream>
+#include "Game/Soldier/Melee/SwordMan/SwordMan.h"
 
 namespace swordMan
 {

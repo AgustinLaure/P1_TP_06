@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MeleeSoldier.h"
+#include "Game/Soldier/Melee/MeleeSoldier.h"
 
 namespace swordMan
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Soldier.h"
+#include "Game/Soldier/Soldier.h"
 
 namespace meleeSoldier
 {

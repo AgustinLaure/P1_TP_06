@@ -1,4 +1,4 @@
-#include "CrossbowMan.h"
+#include "Game/Soldier/Ranged/CrossbowMan/CrossbowMan.h"
 
 namespace crossbowMan
 {

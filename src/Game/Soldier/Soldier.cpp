@@ -1,6 +1,4 @@
-#include "Soldier.h"
-
-#include <iostream>
+#include "Game/Soldier/Soldier.h"
 
 namespace soldier
 {

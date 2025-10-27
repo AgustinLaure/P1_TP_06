@@ -1,4 +1,4 @@
-#include "MeleeSoldier.h"
+#include "Game/Soldier/Melee/MeleeSoldier.h"
 
 namespace meleeSoldier
 {
