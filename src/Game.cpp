@@ -134,7 +134,10 @@ namespace game
 				consoleHandle::clearScreen();
 
 				drawStats();
-				soldiers[i]->update(getSoldierTarget(i));
+				soldiers[i]->setTarget(getSoldierTarget(i));
+				soldiers[i]->update(soldiers);
+
+				std::cout << std::endl << std::endl;
 
 				consoleHandle::pauseConsole();
 			}
@@ -173,7 +176,7 @@ namespace game
 			consoleHandle::print(distBetweenNames * namesWritten, line + 4, isAliveText);
 
 			consoleHandle::print(distBetweenNames * namesWritten, line + 5, "Hp ");
-			std::cout << soldiers[i]->getHp();
+			std::cout << soldiers[i]->getCurrentHp() << " / " << soldiers[i]->getMaxHp();
 
 			consoleHandle::print(distBetweenNames * namesWritten, line + 6, "Stam ");
 			std::cout << soldiers[i]->getCurrentStamina() << " / " << soldiers[i]->getMaxStamina();
@@ -204,16 +207,16 @@ namespace game
 		}
 	}
 
-	soldier::Soldier* Game::getSoldierTarget(int self)
+	int Game::getSoldierTarget(int self)
 	{
 		int target = 0;
 
 		do
 		{
-			random::getRandom(0, maxSoldiers - 1);
+			target = random::getRandom(0, maxSoldiers - 1);
 
 		} while (!soldiers[target]->getIsAlive() || target == self);
 
-		return soldiers[target];
+		return target;
 	}
 }

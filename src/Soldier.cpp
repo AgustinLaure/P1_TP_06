@@ -6,7 +6,7 @@ namespace soldier
 {
 	void Soldier::tryAttackText(int pos)
 	{
-		std::cout << name << " intento atacar a la posicion " << pos;
+		std::cout << name << " intento atacar a la posicion " << pos+1;
 	}
 
 	void Soldier::restText()
@@ -35,10 +35,11 @@ namespace soldier
 		currentStamina = maxStamina;
 	}
 
-	Soldier::Soldier(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name) : hp(hp), currentStamina(maxStamina), maxStamina(maxStamina), staminaAttackCost(staminaAttackCost), pos(pos), damage(damage), name(name), isAlive(true), target(nullptr) {}
+	Soldier::Soldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name) : maxHp(maxHp), currentHp(maxHp), currentStamina(maxStamina), maxStamina(maxStamina), staminaAttackCost(staminaAttackCost), pos(pos), damage(damage), name(name), isAlive(true), target(0) {}
 	
 	std::string Soldier::getName() { return name; }
-	int Soldier::getHp() { return hp; }
+	int Soldier::getCurrentHp() { return currentHp; }
+	int Soldier::getMaxHp() { return maxHp; }
 	int Soldier::getCurrentStamina() { return currentStamina; }
 	int Soldier::getMaxStamina() { return maxStamina; }
 	int Soldier::getStaminaAttackCost() { return staminaAttackCost; }
@@ -48,20 +49,28 @@ namespace soldier
 
 	void Soldier::setName(std::string name) { this->name = name; };
 	
-	void Soldier::takeDamage(int damage)
+	void Soldier::setTarget(int target)
 	{
-		hp -= damage;
+		this->target = target;
 	}
 
-	void Soldier::update(Soldier* target)
+	void Soldier::takeDamage(int damage)
 	{
+		currentHp -= damage;
+	}
+
+	void Soldier::update(Soldier* soldiers[])
+	{
+		this->target = target;
+
 		if (currentStamina < staminaAttackCost)
 		{
 			rest();
 		}
 		else
 		{
-			attack();
+			tryAttackText(soldiers[target]->getPos());
+			attack(soldiers);
 		}
 	}
 }

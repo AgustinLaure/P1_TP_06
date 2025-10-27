@@ -4,15 +4,15 @@
 
 namespace swordMan
 {
-	SwordMan::SwordMan(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(hp, maxStamina, staminaAttackCost, pos, damage, name, attackRadius) {}
+	SwordMan::SwordMan(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name, attackRadius) {}
 
 	void SwordMan::landedHitText()
 	{
-		std::cout << name << " e impacto el golpe haciendole " << damage << " de danio a un enemigo";
+		std::cout << " e impacto el golpe haciendole " << damage << " de danio a un enemigo";
 	}
 
-	void SwordMan::landHit()
+	void SwordMan::landHit(Soldier* soldiers[])
 	{
-		target->takeDamage(damage);
+		soldiers[target]->takeDamage(damage);
 	}
 }

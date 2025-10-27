@@ -2,25 +2,27 @@
 
 namespace meleeSoldier
 {
-	MeleeSoldier::MeleeSoldier(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : Soldier(hp, maxStamina, staminaAttackCost, pos, damage, name), attackRadius(attackRadius) {}
+	MeleeSoldier::MeleeSoldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : Soldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name), attackRadius(attackRadius) {}
 	int MeleeSoldier::getAttackRadius() { return attackRadius; }
 
-	void MeleeSoldier::attack()
+	void MeleeSoldier::attack(Soldier* soldiers[])
 	{
-		if (abs(pos) - abs(target->getPos()) <= attackRadius)
+		if (abs(pos - soldiers[target]->getPos()) <= attackRadius)
 		{
-			landHit();
+			landHit(soldiers);
 
 			loseStamina(staminaAttackCost);
+
+			landedHitText();
 		}
 		else
 		{
-			missedText();
+			missedText(soldiers);
 		}
 	}
 
-	void MeleeSoldier::missedText()
+	void MeleeSoldier::missedText(Soldier* soldiers[])
 	{
-		std::cout << "pero fallo porque el enemigo estaba muy lejos";
+		std::cout << " pero fallo porque el enemigo estaba muy lejos";
 	}
 }

@@ -25,6 +25,6 @@ namespace archer
 	private:
 
 	public:
-		Archer(int hp, int maxStamina, int staminaAttackCost, int pos, int dmg, std::string name, int minDistance, int maxDistance);
+		Archer(int maxHp, int maxStamina, int staminaAttackCost, int pos, int dmg, std::string name, int minDistance, int maxDistance);
 	};
 }

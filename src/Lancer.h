@@ -23,8 +23,8 @@ namespace lancer
 	private:
 		int hitAmount;
 	public:
-		Lancer(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
-		void landHit() override;
+		Lancer(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
+		void landHit(Soldier* soldiers[]) override;
 		void landedHitText() override;
 	};
 }

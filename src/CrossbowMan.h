@@ -24,7 +24,7 @@ namespace crossbowMan
 	class CrossbowMan : public rangedSoldier::RangedSoldier
 	{
 	public:
-		CrossbowMan(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int minDistance, int maxDistance);
+		CrossbowMan(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int minDistance, int maxDistance);
 	};
 }
 

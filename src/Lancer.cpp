@@ -2,26 +2,28 @@
 
 namespace lancer
 {
-	Lancer::Lancer(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(hp, maxStamina, staminaAttackCost, pos, damage, name, attackRadius), hitAmount(0) {}
+	Lancer::Lancer(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius) : MeleeSoldier(maxHp, maxStamina, staminaAttackCost, pos, damage, name, attackRadius), hitAmount(0) {}
 
-	void Lancer::landHit()
+	void Lancer::landHit(Soldier* soldiers[])
 	{
 		hitAmount = 0;
-		while (target->getPos() != pos)
+
+		while (soldiers[target]->getPos() != pos)
 		{
-			if (target->getIsAlive())
+
+			if (soldiers[target]->getIsAlive())
 			{
-				target->takeDamage(damage);
+				soldiers[target]->takeDamage(damage);
 				hitAmount++;
 			}
 
-			if (target->getPos() > pos)
+			if (soldiers[target]->getPos() > pos)
 			{
-				target--;
+				target = target--;
 			}
-			else if (target->getPos() < pos)
+			else if (soldiers[target]->getPos() < pos)
 			{
-				target++;
+				target = target++;
 			}
 		}
 	}

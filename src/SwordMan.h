@@ -24,9 +24,9 @@ namespace swordMan
 	{
 	private:
 	public:
-		SwordMan(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
+		SwordMan(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
 		void landedHitText() override;
-		void landHit() override;
+		void landHit(Soldier* soldiers[]) override;
 	};
 
 }

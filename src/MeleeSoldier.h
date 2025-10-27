@@ -8,13 +8,13 @@ namespace meleeSoldier
 	{
 	protected:
 		int attackRadius;
-		void virtual attack() override;
+		void virtual attack(Soldier* soldiers[]) override;
 		
 	public:
-		MeleeSoldier(int hp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
+		MeleeSoldier(int maxHp, int maxStamina, int staminaAttackCost, int pos, int damage, std::string name, int attackRadius);
 		int getAttackRadius();
 
-		void missedText() override;
+		void missedText(Soldier* soldiers[]) override;
 		
 	};
 }
